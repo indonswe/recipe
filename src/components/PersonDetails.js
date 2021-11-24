@@ -6,7 +6,7 @@ import PersonService from '../service/PersonService';
 
 const PersonDetails = () => {
     const params = useParams();
-    const [person, setPerson] = useState({id: 0, firstName: '', lastName: '',email: '', title: ''});
+    const [ingredient, setIngredient] = useState({ingredientId: 0, ingredientName: ''});
     const [message, setMessage] = useState({value: '', type: ''});
     const history = useHistory();
 
@@ -17,7 +17,7 @@ const PersonDetails = () => {
             console.log("PERSON:" , res);
             if(res.status === 200){
                 console.log(res.data);
-                setPerson(res.data);
+                setIngredient(res.data);
             }else {
                 // update error state
                 setMessage({value: 'API ERROR: '+ res.status, type: 'danger'})
@@ -32,10 +32,10 @@ const PersonDetails = () => {
                     Person Details
                 </div>
                 <div className="card-body">
-                    <h5 className="card-title">Title: {person.title}</h5>
-                    <p className="card-text">ID: {person.id}</p>
-                    <p className="card-text">Name: {person.firstName} {person.lastName}</p>
-                    <p className="card-text">Email: {person.email}</p>
+                    <h5 className="card-title">Title: {ingredient.ingredientId}</h5>
+                    <p className="card-text">ID: {ingredient.ingredientId}</p>
+                    <p className="card-text">Name: {ingredient.ingredientName}</p>
+                    
                 </div>
                 <div className="card-footer">
                     <button className="btn btn-outline-danger" onClick={()=> history.push('/crud')}>Back</button>

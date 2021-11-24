@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:8080/api/v1/person/";
+//const baseURL = "http://localhost:8080/api/v1/person/";
+
+const baseURL = "http://localhost:8080/api/ingredients/"
 
 class PersonService {
 

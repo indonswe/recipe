@@ -35,8 +35,6 @@ const CrudDemo = () => {
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 )
@@ -82,11 +80,11 @@ const CrudDemo = () => {
                 <tbody>
                    {
                     persons.map( (person)=> (
-                        <tr key={person.id}>
-                            <td>{person.id}</td>
-                            <td>{person.firstName} {person.lastName}</td>
-                            <td>{person.email}</td>
-                            <td><TableAction id={person.id} /></td>
+                        <tr key={person.ingredientId}>
+                            <td>{person.ingredientId}</td>
+                            <td>{person.ingredientName}</td>
+                            
+                            <td><TableAction id={person.ingredientId} /></td>
                         </tr>
                     ))   
                    }                     
